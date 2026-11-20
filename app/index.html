@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Shore — GTA 6 Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Neon Shore</h1>
+    <p class="tag">Turn your photos into GTA 6-style cover art. Offline — photos never leave your machine.</p>
+    <div class="group">
+      <h2>1 · Photos</h2>
+      <label>Photo 1 <input id="photo1" type="file" accept="image/*"></label>
+      <label>Photo 2 <input id="photo2" type="file" accept="image/*"></label>
+      <label>Photo 3 <input id="photo3" type="file" accept="image/*"></label>
+      <div class="row">
+        <button id="samples" type="button">Use sample photos</button>
+        <button id="shuffle" type="button">Shuffle</button>
+      </div>
+    </div>
+    <div class="group">
+      <h2>2 · Layout</h2>
+      <div id="layouts" class="picks"></div>
+    </div>
+    <div class="group">
+      <h2>3 · Grade</h2>
+      <div id="grades" class="picks"></div>
+    </div>
+    <div class="group">
+      <h2>4 · Words</h2>
+      <label>Title <input id="title" type="text" maxlength="24" value="NEON SHORE"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="chase the sunset"></label>
+      <label>Badge <input id="badge" type="text" maxlength="16" value="LEONIDA"></label>
+    </div>
+    <div class="group">
+      <h2>5 · Panel</h2>
+      <p id="panelLabel" class="hint">Panel 1 of 8</p>
+      <label>Zoom <input id="zoom" type="range" min="100" max="300" value="100"></label>
+      <div class="row">
+        <button id="cyclePhoto" type="button">Next photo</button>
+        <button id="resetPanel" type="button">Reset panel</button>
+      </div>
+      <p class="hint">Click a panel to select it. Drag to move the photo, scroll to zoom.</p>
+    </div>
+    <div class="group">
+      <h2>6 · Export</h2>
+      <div id="sizes" class="picks"></div>
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <p id="status" role="status"></p>
+    </div>
+    <p class="fine">Original art drawn in code. Lettering: Anton &amp; Pacifico (SIL OFL). No Rockstar logo, artwork or fonts.</p>
+  </section>
+  <section class="stage">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover preview"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
